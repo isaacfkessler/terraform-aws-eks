@@ -5,7 +5,7 @@ resource "aws_vpc" "this" {
 
   ## Merge allow add local tags and another tags from resource
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name = "${var.project_name}-vpc"
     }
