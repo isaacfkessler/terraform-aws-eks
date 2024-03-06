@@ -10,5 +10,5 @@ variable "region" {
 
 variable "project_name" {
   type        = string
-  description = "its the project name to be used"
+  description = "its the project name to be use"
 }
