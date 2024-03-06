@@ -3,5 +3,10 @@ resource "aws_iam_policy" "policy" {
   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
   policy = file("${path.module}/iam_policy.json")
-  tags   = var.tags
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}-lb-controller-policy"
+    }
+  )
 }
